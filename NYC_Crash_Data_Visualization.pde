@@ -11,6 +11,7 @@ PImage beer;
 
 Vehicle [] vehicles = new Vehicle [14];  
 void setup() {
+  print("Hello");
 
   vehicles[0] =  new Passenger_Vehicle();
   vehicles[1] = new Scooter();
@@ -224,44 +225,6 @@ void draw() {
     if (mouseX > 1200 && mouseX < 1235 && mouseY > 900 && mouseY < 950) {
       if (mousePressed == true) {
       }
-    }
-  }
-}
-Vehicle[] selectionSort(Vehicle[] vehs) {
-  Vehicle[] arraytemp; 
-  arraytemp = new Vehicle[14]; //The Temporary array will have a size of the vehs array
-  for (int i = 0; i < 14; i++) { //First loop to search through all jellyfish in the array
-    float max = vehs[i].vehicle_ypos * vehs[i].endcount;
-    int x = i; //Temporary value for array index for smallest jellyfish
-    for (int a = i; a<14; a++) { //loops through the array to check for the smallest jellyfish
-      float temp = vehs[a].vehicle_ypos * vehs[a].endcount; 
-      if (max >=  temp) {
-      } else if (max < temp) { //If the size of the current smallest jellyfish is larger than the current jellyfish, we replace then the smallest jellyfish is now the current jellyfish
-        max = temp;
-        x = a;
-        //println(temp);
-      }
-    }
-
-    Vehicle indextemp = vehs[x]; 
-    vehs[x] = vehs[i];
-    vehs[i] = indextemp;
-    arraytemp[i] = indextemp;
-  }
-  for (int i = 0; i < arraytemp.length; i++) {
-    print("[" + arraytemp[i].vehicle_ypos + "]");
-  }
-  println("");
-
-  return arraytemp;
-}
-void keyPressed() {
-  if (key=='s') {
-    int initial = -55; //We want the jellyfish to start from left to right, so we set the initial value at 0
-    vehicles = selectionSort(vehicles); //Runs selection sort function, setting the array as equal to sorted array
-    for (int i = 0; i<vehicles.length; i++) { //Sorts square location into an ascending and orderly fashion
-      initial += 60; //A 50 pixel difference between the jellyfish
-      vehicles[i].vehicle_ypos = initial;
     }
   }
 }
