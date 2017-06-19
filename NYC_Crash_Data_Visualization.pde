@@ -34,7 +34,9 @@ void setup() {
   borough_circle = new Circle(new PVector(50, 100));
   date_circle = new Circle(new PVector(100, 500));
 
-  // When we create the reader, we have the reader read the first line that contains the headings, so that these headings do not interfere with the number data later on
+  // When we create the reader, we have the reader read the first line 
+  //that contains the headings, so that these headings do not interfere with 
+  //the number data later on
   reader = createReader("collisions.csv");
   try {
     line = reader.readLine();
@@ -263,4 +265,3 @@ void keyPressed() {
     }
   }
 }
-
