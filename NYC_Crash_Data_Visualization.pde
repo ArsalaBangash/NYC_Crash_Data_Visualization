@@ -11,7 +11,6 @@ PImage beer;
 
 Vehicle [] vehicles = new Vehicle [14];  
 void setup() {
-  print("Hello");
 
   vehicles[0] =  new Passenger_Vehicle();
   vehicles[1] = new Scooter();
@@ -196,35 +195,5 @@ void draw() {
     date_circle.move();
     date_circle.display();
     date_circle.checkEdges();
-
-
-    if (mouseX > 800 && mouseX < 835 && mouseY > 900 && mouseY < 950) {
-      if (mousePressed == true) {
-      }
-    }
-    if (mouseX > 1000 && mouseX < 1050 && mouseY > 900 && mouseY < 950) {
-      if (mousePressed == true) {
-        if (fell_asleep.equals("1") || fatigued_drowsy.equals("1")) { 
-          vehicles[0].update(passenger_vehicle);
-          vehicles[1].update(scooter);
-          vehicles[2].update(livery_vehicle);
-          vehicles[3].update(fire_truck);
-          vehicles[4].update(bus);
-          vehicles[5].update(ambulance);
-          vehicles[6].update(bicycle);
-          vehicles[7].update(large_com_veh_6_or_more_tires);
-          vehicles[8].update(small_com_veh_4_tires);
-          vehicles[9].update(van);
-          vehicles[10].update(pedicab);
-          vehicles[11].update(motorcycle);
-          vehicles[12].update(pick_up_truck);
-          vehicles[13].update(taxi_vehicle);
-        }
-      }
-    }
-    if (mouseX > 1200 && mouseX < 1235 && mouseY > 900 && mouseY < 950) {
-      if (mousePressed == true) {
-      }
-    }
   }
 }
